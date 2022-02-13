@@ -7,14 +7,19 @@ SECTION = "libs"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = "file://END_USER_LICENCE_AGREEMENT.txt;md5=3918cc9836ad038c5a090a0280233eea"
 
-PV:append = "+git${SRCPV}"
+# PV:append = "+git${SRCPV}"
 
 inherit freeze-rev local-git
 
-SRC_URI = " \
-	git://github.com/JeffyCN/mirrors.git;protocol=https;branch=libmali; \
+SRC_URI:pn-rockchip-libmali = " \
+	git:///home/thc013/corner/Quartz64-release/external/libmali;protocol=file;usehead=1 \
 "
-SRCREV = "968a49083754f4c63ae02c4c54f866cb8c83d661"
+SRCREV:pn-rockchip-libmali = "${AUTOREV}"
+
+#SRC_URI = " \
+#	git://github.com/Caesar-github/libmali.git;protocol=https;branch=master; \
+#"
+#SRCREV = "c1ce9235ee20e0a2b02f48e2748fe169b19fbff6"
 S = "${WORKDIR}/git"
 
 DEPENDS = "libdrm"

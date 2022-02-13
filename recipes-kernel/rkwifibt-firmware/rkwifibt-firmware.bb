@@ -34,6 +34,8 @@ PACKAGES =+ " \
 	${PN}-ap6236-bt \
 	${PN}-ap6255-wifi \
 	${PN}-ap6255-bt \
+	${PN}-ap6256-wifi \
+	${PN}-ap6256-bt \
 	${PN}-ap6275p-wifi \
 	${PN}-ap6275p-bt \
 	${PN}-ap6354-wifi \
@@ -76,6 +78,16 @@ FILES:${PN}-ap6255-wifi = " \
 FILES:${PN}-ap6255-bt = " \
 	system/etc/firmware/BCM4345C0_ap.hcd \
 	system/etc/firmware/BCM4345C0.hcd \
+"
+
+FILES:${PN}-ap6256-wifi = " \
+	system/etc/firmwarefw_bcm43456c5_ag_mfg \
+	system/etc/firmware/fw_bcm43456c5_ag.bin \
+	system/etc/firmware/nvram_ap6256.txt \
+"
+FILES:${PN}-ap6256-bt = " \
+	system/etc/firmware/BCM4345C5.hcd \
+	system/etc/firmware/BCM4345C5.hcd \
 "
 
 FILES:${PN}-ap6275p-wifi = " \
