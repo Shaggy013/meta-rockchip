@@ -6,11 +6,17 @@ require linux-rockchip.inc
 
 inherit freeze-rev local-git
 
-SRCREV = "82957dba3977fd50d4c013e0d359f3203072a0f2"
-SRC_URI = " \
-	git://github.com/JeffyCN/mirrors.git;protocol=https;nobranch=1;branch=kernel-4.19-2022_01_10; \
-	file://${THISDIR}/files/cgroups.cfg \
+#SRCREV = "82957dba3977fd50d4c013e0d359f3203072a0f1"
+#SRC_URI = " \
+#	git://github.com/JeffyCN/mirrors.git;protocol=https;nobranch=1;branch=kernel-4.19-2022_01_10; \
+#	file://${THISDIR}/files/cgroups.cfg \
+#"
+SRC_URI_pn-linux-rockchip = " \
+        git://${TOPDIR}/../kernel-4.19;protocol=file;usehead=1 \
+        file://cgroups.cfg \
 "
+SRCREV_pn-linux-rockchip = "${AUTOREV}"
+KBRANCH = "HEAD"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 

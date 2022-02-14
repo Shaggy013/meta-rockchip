@@ -6,19 +6,22 @@ inherit auto-patch
 
 inherit python3-dir
 
-PV = "2017.09+git${SRCPV}"
+# PV = "2017.09+git${SRCPV}"
 
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
 
 inherit freeze-rev local-git
 
-SRCREV = "e3ca3c3805cc60cc9e2fe2a4d78694907b49ee46"
+#SRCREV = "e3ca3c3805cc60cc9e2fe2a4d78694907b49ee46"
+SRCREV_pn-u-boot = "${AUTOREV}"
 SRCREV_rkbin = "104659686b734ab041ef958c0abece1a250f48a4"
 SRC_URI = " \
-	git://github.com/JeffyCN/mirrors.git;protocol=https;branch=u-boot; \
+	git://${TOPDIR}/../u-boot;protocol=file;usehead=1 \
 	git://github.com/JeffyCN/mirrors.git;protocol=https;branch=rkbin;name=rkbin;destsuffix=rkbin; \
 "
 SRC_URI:remove = "file://0001-riscv32-Use-double-float-ABI-for-rv32.patch"
+
+
 SRCREV_FORMAT = "default_rkbin"
 
 DEPENDS:append = " ${PYTHON_PN}-native"

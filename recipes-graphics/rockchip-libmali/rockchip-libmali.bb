@@ -11,15 +11,12 @@ LIC_FILES_CHKSUM = "file://END_USER_LICENCE_AGREEMENT.txt;md5=3918cc9836ad038c5a
 
 inherit freeze-rev local-git
 
-SRC_URI:pn-rockchip-libmali = " \
-	git:///home/thc013/corner/Quartz64-release/external/libmali;protocol=file;usehead=1 \
-"
 SRCREV:pn-rockchip-libmali = "${AUTOREV}"
 
-#SRC_URI = " \
-#	git://github.com/Caesar-github/libmali.git;protocol=https;branch=master; \
-#"
-#SRCREV = "c1ce9235ee20e0a2b02f48e2748fe169b19fbff6"
+SRC_URI = " \
+	git://${TOPDIR}/../external/libmali;protocol=file;usehead=1 \
+"
+# SRCREV = "c1ce9235ee20e0a2b02f48e2748fe169b19fbff6"
 S = "${WORKDIR}/git"
 
 DEPENDS = "libdrm"
